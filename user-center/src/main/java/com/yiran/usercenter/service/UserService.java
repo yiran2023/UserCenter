@@ -4,10 +4,17 @@ import com.yiran.usercenter.model.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
-* @author 29579
-* @description 针对表【user(user table)】的数据库操作Service
-* @createDate 2023-01-08 15:36:22
+* @author Yiran
+*
+ * user service
 */
 public interface UserService extends IService<User> {
 
+    /**
+     * @param userAccount   user-typed registeration account
+     * @param userPassward  user-typed registration passward
+     * @param checkPassward user double check passward
+     * @return new user id
+     */
+    long userRegister(String userAccount, String userPassward, String checkPassward);
 }
